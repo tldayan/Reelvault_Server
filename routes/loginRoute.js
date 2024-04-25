@@ -49,8 +49,8 @@ const handleLogin = async(req,res) => {
             foundUser.refreshToken = refreshToken
             await foundUser.save()
 
-            res.cookie("jwt_refresh", refreshToken, {httpOnly : true, maxAge : 15 * 24 * 60 * 60 * 1000}) // 15 Days
-            res.cookie("jwt_access", accessToken, {httpOnly : true, maxAge: 300000}) // 5 Mins
+            res.cookie("jwt_refresh", refreshToken, {httpOnly : true, maxAge : 15 * 24 * 60 * 60 * 1000, secure: true}) // 15 Days
+            res.cookie("jwt_access", accessToken, {httpOnly : true, maxAge: 300000, secure: true}) // 5 Mins
             res.json({accessToken}) 
 
         } else {
