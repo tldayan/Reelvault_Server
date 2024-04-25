@@ -14,9 +14,9 @@ app.use(express.urlencoded({ extended: false }));
 //built-in middleware for json
 app.use(express.json());
 
-/* app.use(credentials) */
+app.use(credentials)
 
-/* app.use(cors(corsOptions)); */
+app.use(cors(corsOptions));
 
 
 connectDB()
