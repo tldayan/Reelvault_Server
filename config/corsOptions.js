@@ -2,6 +2,8 @@
 
 const whitelist = ["https://reelvault.vercel.app","http://localhost:5173"]
 
+console.log("reached cprsoption")
+
     const corsOptions = {
         origin: (origin,callback) => {
             if(whitelist.includes(origin)/*  || !origin */) { // "!origin" must be removed during Production
