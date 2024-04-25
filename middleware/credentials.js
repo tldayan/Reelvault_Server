@@ -1,12 +1,12 @@
 
 
-const whitelist = ["https://reelvault.vercel.app","*"]
+const whitelist = ["https://reelvault.vercel.app","http://localhost:5173"]
 
 const credentials = (req,res,next) => {
 
     const origin  = req.headers.origin
 
-    if(origin !== whitelist[0] || origin !== whitelist[1]) {
+    if(whitelist.includes(origin)) {
         res.header("Access-Control-Allow-Credentials", true);
         next()
     } else {
