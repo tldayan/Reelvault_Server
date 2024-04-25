@@ -10,6 +10,7 @@ const handleUserRegister = async (req,res) => {
     const {user,pwd} = req.body
 
    /*  console.log(user,pwd) */
+   console.log("req cam for sign up")
 
     if(!user || !pwd)  {
         return res.status(400).json({"message" : "Username and password are required"})
