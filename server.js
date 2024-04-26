@@ -1,7 +1,7 @@
 const express = require("express");
 /* const cors = require("cors");
 const credentials = require("./middleware/credentials"); */
-const connectDB = require("./mongo/MongoDB");
+/* const connectDB = require("./mongo/MongoDB"); */
 const corsOptions = require("../Auth_NodeJs/config/corsOptions");
 const verifyJWT = require("./middleware/verifiyJWT");
 const cookieParser = require('cookie-parser')
@@ -23,7 +23,7 @@ app.get('/home', (req, res) => {
   res.status(200).json('Welcome, your app is working well');
 })
 
-connectDB()
+/* connectDB() */
 
 app.use(cookieParser())
 
