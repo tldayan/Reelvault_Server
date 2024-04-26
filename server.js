@@ -20,11 +20,6 @@ app.use(cors(corsOptions));
 /* app.use(credentials) */
 
 
-
-app.get('/home', (req, res) => {
-  res.status(200).json('Welcome, your app is working well');
-})
-
 connectDB()
 
 app.use(cookieParser())
