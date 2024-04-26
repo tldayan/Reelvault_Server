@@ -1,3 +1,4 @@
+const credentials = require("../middleware/credentials")
 
 
 const whitelist = ["https://reelvault.vercel.app","'http://localhost:5173"]
@@ -10,6 +11,7 @@ const whitelist = ["https://reelvault.vercel.app","'http://localhost:5173"]
                 callback(new Error("Not allowed by Cors"))
             }
         },
+        credentials : true,
         optionsSuccessStatus: 200
     }
 
