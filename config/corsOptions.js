@@ -6,7 +6,7 @@ function isFaviconRequest(req) {
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || whitelist.includes(origin) || isFaviconRequest(req)) {
+    if (whitelist.includes(origin) || isFaviconRequest(req)) {
       // Allow requests with no origin (e.g., favicon requests) or from whitelisted origins
       callback(null, true);
     } else {
