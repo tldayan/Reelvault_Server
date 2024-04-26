@@ -1,4 +1,4 @@
-const whitelist = ["https://reelvault.vercel.app", "http://localhost:5173"];
+const whitelist = ["https://reelvault.vercel.app"];
 
 function isFaviconRequest(req) {
   return req.originalUrl && req.originalUrl.endsWith('/favicon.ico');
