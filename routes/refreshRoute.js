@@ -10,6 +10,7 @@ const handleRefreshToken = async(req,res) => {
     const cookies = req.cookies
 
     if(!cookies.jwt_refresh) {
+        console.log("ENDED HERE")
         return res.sendStatus(401) // if refreshToken is not there in the cookie of the client, then they are unauthorized
     }
 

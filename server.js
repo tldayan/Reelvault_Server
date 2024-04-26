@@ -3,7 +3,7 @@ const cors = require("cors");
 const credentials = require("./middleware/credentials");
 const connectDB = require("./mongo/MongoDB");
 const corsOptions = require("./config/corsOptions");
-/* const verifyJWT = require("./middleware/verifyJWT"); */
+const verifyJWT = require("./middleware/verifyJWT");
 const cookieParser = require('cookie-parser')
 const app = express()
 
@@ -33,7 +33,7 @@ app.use("/refresh", require("./routes/refreshRoute"))
 app.use("/logout", require("./routes/logoutRoute"))
 
 
-/* app.use(verifyJWT) */
+app.use(verifyJWT)
 
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"))
 app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDetails"))
