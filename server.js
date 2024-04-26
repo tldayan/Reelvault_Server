@@ -3,7 +3,7 @@ const cors = require("cors");
 const credentials = require("./middleware/credentials");
 const connectDB = require("./mongo/MongoDB");
 const corsOptions = require("../Auth_NodeJs/config/corsOptions");
-const verifyJWT = require("./middleware/verifiyJwt");
+const verifyJWT = require("./middleware/verifiyJWT");
 const cookieParser = require('cookie-parser')
 const app = express()
 
