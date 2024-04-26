@@ -1,12 +1,12 @@
 const whitelist = ["https://reelvault.vercel.app", "http://localhost:5173"];
 
-function isFaviconRequest(req) {
+/* function isFaviconRequest(req) {
   return req.originalUrl && req.originalUrl.endsWith('/favicon.ico');
-}
+} */
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.includes(origin) || isFaviconRequest(req)) {
+    if (whitelist.includes(origin)/*  || isFaviconRequest(req) */) {
       // Allow requests with no origin (e.g., favicon requests) or from whitelisted origins
       callback(null, true);
     } else {
