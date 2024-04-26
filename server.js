@@ -1,8 +1,8 @@
 const express = require("express");
-/* const cors = require("cors");
-const credentials = require("./middleware/credentials"); */
-/* const connectDB = require("./mongo/MongoDB"); */
-/* const corsOptions = require("../Auth_NodeJs/config/corsOptions"); */
+const cors = require("cors");
+const credentials = require("./middleware/credentials");
+const connectDB = require("./mongo/MongoDB");
+const corsOptions = require("./config/corsOptions");
 const verifyJWT = require("./middleware/verifiyJWT");
 const cookieParser = require('cookie-parser')
 const app = express()
@@ -16,14 +16,15 @@ app.use(express.urlencoded({ extended: false }));
 //built-in middleware for json
 app.use(express.json());
 
-/* app.use(credentials)
+app.use(credentials)
 
-app.use(cors(corsOptions)); */
+app.use(cors(corsOptions));
+
 app.get('/home', (req, res) => {
   res.status(200).json('Welcome, your app is working well');
 })
 
-/* connectDB() */
+connectDB()
 
 app.use(cookieParser())
 
