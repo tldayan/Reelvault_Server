@@ -7,7 +7,7 @@ const verifyJWT = require("./middleware/verifiyJWT");
 const cookieParser = require('cookie-parser')
 const app = express()
 
-/* const PORT = process.env.PORT || 3200; */
+const PORT = process.env.PORT/*  || 3200 */;
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -39,6 +39,4 @@ app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"))
 
 
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
