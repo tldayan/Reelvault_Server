@@ -51,7 +51,8 @@ const handleLogin = async(req,res) => {
 
             res.cookie("jwt_refresh", refreshToken, {httpOnly : true, maxAge : 15 * 24 * 60 * 60 * 1000, secure: true, sameSite: "None"}) // 15 Days
             res.cookie("jwt_access", accessToken, {httpOnly : true, maxAge: 300000, secure: true, sameSite: "None"}) // 5 Mins
-            res.json({accessToken}) 
+      /*       res.json({accessToken})  */
+            res.sendStatus(200)
 
         } else {
             return res.status(401).json({"message" : "User not Authorized"})
