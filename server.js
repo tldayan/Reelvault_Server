@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const credentials = require("./middleware/credentials");
+/* const credentials = require("./middleware/credentials"); */
 const connectDB = require("./mongo/MongoDB");
 const corsOptions = require("./config/corsOptions");
 const verifyJWT = require("./middleware/verifyJWT");
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.use(credentials)
+/* app.use(credentials) */
 app.use(cors(corsOptions));
 
 
