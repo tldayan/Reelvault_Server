@@ -23,9 +23,9 @@ const handleLogout = async(req,res) => {
 
 
     if(accessToken) {
-        res.clearCookie("jwt_access", {httpOnly : true, secure: true, sameSite: "None"}) // Add 'secure: true' when in production
+        res.clearCookie("jwt_access", {httpOnly : true, secure: true, sameSite:"Strict"}) // Add 'secure: true' when in production
     }
-    res.clearCookie("jwt_refresh", { httpOnly: true, secure: true, sameSite: "None"}); // Add 'secure: true' when in production
+    res.clearCookie("jwt_refresh", { httpOnly: true, secure: true, sameSite:"Strict"}); // Add 'secure: true' when in production
     return res.sendStatus(200); // OK status to indicate successful logout
 
 
