@@ -49,8 +49,8 @@ const handleLogin = async(req,res) => {
             foundUser.refreshToken = refreshToken
             await foundUser.save()
 
-            res.cookie("jwt_refresh", refreshToken, {httpOnly : true, domain : "vercel.app", maxAge : 15 * 24 * 60 * 60 * 1000, secure: true, sameSite: "secure"}) // 15 Days
-            res.cookie("jwt_access", accessToken, {httpOnly : true, domain : "vercel.app", maxAge: 300000, secure: true, sameSite: "secure"}) // 5 Mins
+            res.cookie("jwt_refresh", refreshToken, {httpOnly : true, domain : "vercel.app", maxAge : 15 * 24 * 60 * 60 * 1000, secure: true, sameSite: "None"}) // 15 Days
+            res.cookie("jwt_access", accessToken, {httpOnly : true, domain : "vercel.app", maxAge: 300000, secure: true, sameSite: "None"}) // 5 Mins
       /*       res.json({accessToken})  */
             res.sendStatus(200)
 
