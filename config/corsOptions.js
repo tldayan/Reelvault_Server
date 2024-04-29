@@ -1,4 +1,4 @@
-const whitelist = ["https://reelvault-final.vercel.app","https://reelvault-final.onrender.com"];
+const whitelist = ["https://reelvault-final.vercel.app"];
 
 const corsOptions = {
   origin: (origin, callback) => {
