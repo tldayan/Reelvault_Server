@@ -25,9 +25,7 @@ app.use(cors(corsOptions));
 connectDB()
 
 app.use(cookieParser())
-app.get("/test", (req, res) => {
-  res.send("Success! You have reached the /test route.");
-});
+
 
 app.use("/signup", require("./routes/signupRoute"))
 app.use("/login", require("./routes/loginRoute"))
