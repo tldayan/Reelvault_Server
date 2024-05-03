@@ -42,7 +42,7 @@ const handleRefreshToken = async(req,res) => {
             )
 
 
-            res.cookie("jwt_access", accessToken, {httpOnly : true, domain: "vercel.app", maxAge : 300000, secure: true, sameSite: "None"})
+            res.cookie("jwt_access", accessToken, {httpOnly : true, /* domain: "vercel.app", */ maxAge : 300000, secure: true, sameSite: "None"})
             /* console.log(`access token sent to cookie, and username is ${foundUser.username}`) */
             res.sendStatus(200)
         }
