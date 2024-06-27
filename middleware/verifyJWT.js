@@ -4,7 +4,7 @@ require('dotenv').config()
 
 const verifyJWT = (req,res,next) => {
     
-    const accessToken = req.cookies.jwt_access
+    /* const accessToken = req.cookies.jwt_access
     
 
     if(!accessToken) {
@@ -19,7 +19,12 @@ const verifyJWT = (req,res,next) => {
             req.user = decoded.UserInfo.username
             next()
         }
-    )
+    ) */
+
+
+        const accessToken = req.cookies.stytch_session_jwt
+        if(!accessToken) return res.sendStatus(401)
+        next()
 
 }
 
