@@ -35,6 +35,7 @@ app.use("/logout", require("./routes/logoutRoute"))
 
 app.use(verifyJWT)
 
+app.use("/createUser", require("./routes/mongo/createUser"))
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"))
 app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDetails"))
 app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"))

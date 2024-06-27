@@ -7,10 +7,10 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
-    password : { 
+/*     password : { 
         type : String,
         required : true
-    },
+    }, */
     userShowsDetails : [{
         showId: String,
         showName: String,
@@ -18,7 +18,7 @@ const userSchema = new Schema({
         showSeason: Number,
         showEpisode: Number
     }],
-    refreshToken : String
+/*     refreshToken : String */
 
 })
 
