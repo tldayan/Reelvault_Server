@@ -9,7 +9,7 @@ export const createUser = async(req,res) => {
 
   try {
 
-    await User.create({
+    const newUser = await User.create({
         "username" : username
       })
 
@@ -22,4 +22,5 @@ export const createUser = async(req,res) => {
 }
 
 router.route("/").post(createUser)
+
 module.exports = router;
