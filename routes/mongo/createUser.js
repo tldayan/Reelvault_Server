@@ -3,7 +3,7 @@ const User = require("../../mongo/models/User")
 const router = express.Router()
 
 
-export const createUser = async(req,res) => {
+const createUser = async(req,res) => {
   
   const {username}  = req.body
 
