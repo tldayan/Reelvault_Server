@@ -4,8 +4,9 @@ const router = express.Router()
 
 
 const createUser = async(req,res) => {
-  
+
   const {username}  = req.body
+
 
   try {
 
