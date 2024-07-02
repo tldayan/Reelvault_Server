@@ -1,8 +1,12 @@
-const jwt = require("jsonwebtoken")
+const stytch = require('stytch')
 require('dotenv').config()
 
+const stytchClient = new stytch.Client({
+  project_id: process.env.STYTCH_PROJECT_ID,
+  secret: process.env.STYTCH_SECRET
+});
 
-const verifyJWT = (req,res,next) => {
+const verifyJWT = async(req,res,next) => {
     
     /* const accessToken = req.cookies.jwt_access
     
@@ -21,10 +25,21 @@ const verifyJWT = (req,res,next) => {
         }
     ) */
 
-
         const accessToken = req.cookies.stytch_session_jwt
-        if(!accessToken) return res.sendStatus(401)
-        next()
+
+        if(!accessToken) {
+            return res.sendStatus(401);
+        }
+
+        try {
+
+            const stytchResponse = await stytchClient.sessions.authenticateJwt({session_jwt : accessToken})
+            req.stytchUser = stytchResponse.user
+            next()
+            
+        } catch (err) {
+            return res.sendStatus(401)
+        }
 
 }
 

@@ -27,13 +27,19 @@ connectDB()
 app.use(cookieParser())
 
 
-app.use("/signup", require("./routes/signupRoute"))
+/* app.use("/signup", require("./routes/signupRoute"))
 app.use("/login", require("./routes/loginRoute"))
 app.use("/refresh", require("./routes/refreshRoute"))
-app.use("/logout", require("./routes/logoutRoute"))
+app.use("/logout", require("./routes/logoutRoute")) */
 
 
-/* app.use(verifyJWT) */
+app.use(verifyJWT)
+
+app.use("/test", (req,res) => {
+  return res.send({message : "Hello"})
+})
+
+app.use("/getIsUserExisting", require("./routes/mongo/getIsUserExisting")) //YOU STOPPED HERE,
 app.use("/incrementStytchUser", require("./routes/mongo/incrementStytchUser"))
 app.use("/createUser", require("./routes/mongo/createUser"))
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"))
