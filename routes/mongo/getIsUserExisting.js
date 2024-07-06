@@ -7,8 +7,8 @@ const getIsUserExisting = async(req,res) => {
 
   try {
 
-    const {userId} = req.query.userId
-
+    const userId = req.query.userId
+   
     const existingUser = await User.findOne({userId}).exec()
 
     if(!existingUser) {

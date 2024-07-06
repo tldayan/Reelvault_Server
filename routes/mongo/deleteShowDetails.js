@@ -3,10 +3,10 @@ const User = require("../../mongo/models/User");
 const router = express.Router();
 
 const deleteShowDetails = async (req, res) => {
-  const { username, showId } = req.body;
+  const { userId, showId } = req.body;
 
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ userId });
 
     if (!user) {
       console.log("User not found");

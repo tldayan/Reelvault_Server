@@ -10,10 +10,10 @@ const incrementStytchUser = async(req,res) => {
     const stytchLimit = await StytchLimit.findOne()
 
       if(!stytchLimit) {
-        stytchLimit = await StytchLimit.create({limit : 0})
+        createStytchLimit = await StytchLimit.create({limit : 0})
       }
       
-      if(stytchLimit.limit <= 100) {
+      if(stytchLimit.limit <= 50) {
         stytchLimit.limit++
         const result = await stytchLimit.save()
         return res.sendStatus(200)

@@ -38,6 +38,7 @@ const verifyJWT = async(req,res,next) => {
             next()
             
         } catch (err) {
+            console.log("verifyJWT Stopped")
             return res.sendStatus(401)
         }
 

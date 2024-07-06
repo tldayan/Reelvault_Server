@@ -6,9 +6,13 @@ const router = express.Router()
 
 const getUserShowDetails = async(req,res) => {
 
-    const username = req.query.username
+    const userId = req.query.userId
 
-    const foundUser = await User.findOne({username}).exec()
+    const foundUser = await User.findOne({userId}).exec()
+
+    if(!foundUser) {
+        return res.status(404)
+    }
 
     const userShowsData = foundUser.userShowsDetails
    

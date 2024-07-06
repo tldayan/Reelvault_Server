@@ -7,6 +7,11 @@ const createUser = async(req,res) => {
 
   const {username,userId}  = req.body
 
+  const foundUser = await User.findOne({userId}).exec()
+
+  if(foundUser) {
+    return res.sendStatus(409)
+  }
 
   try {
 
@@ -18,6 +23,7 @@ const createUser = async(req,res) => {
     res.status(201).json({"message" : `New user ${username} created`})
       
   } catch (err) {
+    console.log(err.message)
     res.status(500).json({"message" : err.message})
   }
 

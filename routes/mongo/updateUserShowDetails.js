@@ -6,14 +6,14 @@ const router = express.Router()
 
 
 const updateUserShowDetails = async(req,res) => {
-    const username = req.body.username
+    const userId = req.body.userId
     const showDetails = req.body.showDetails
 
-    if(!username || !showDetails) {
+    if(!userId || !showDetails) {
        return res.sendStatus(400);
     } 
     
-    const foundUser = await User.findOne({username}).exec()
+    const foundUser = await User.findOne({userId}).exec()
 
     if(foundUser) {
 
