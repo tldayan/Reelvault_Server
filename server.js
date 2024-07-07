@@ -31,7 +31,7 @@ app.use(cookieParser())
 app.use("/login", require("./routes/loginRoute"))
 app.use("/refresh", require("./routes/refreshRoute"))
 app.use("/logout", require("./routes/logoutRoute")) */
-
+app.use("/createUser", require("./routes/mongo/createUser"))
 app.use("/incrementStytchUser", require("./routes/mongo/incrementStytchUser"))
 app.use(verifyJWT)
 
@@ -40,7 +40,7 @@ app.use("/test", (req,res) => {
 })
 
 app.use("/getIsUserExisting", require("./routes/mongo/getIsUserExisting")),
-app.use("/createUser", require("./routes/mongo/createUser"))
+
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"))
 app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDetails"))
 app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"))
