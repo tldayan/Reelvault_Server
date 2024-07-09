@@ -28,7 +28,7 @@ const verifyJWT = async(req,res,next) => {
         const accessToken = req.cookies.stytch_session_jwt
 
         if(!accessToken) {
-            return res.sendStatus(409);
+            return res.sendStatus(401); // HERE IS PROBLEM
         }
 
         try {
@@ -39,7 +39,7 @@ const verifyJWT = async(req,res,next) => {
             
         } catch (err) {
             console.log("verifyJWT Stopped")
-            return res.sendStatus(409)
+            return res.sendStatus(401)
         }
 
 }
