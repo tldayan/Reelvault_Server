@@ -3,7 +3,8 @@ require('dotenv').config()
 
 const stytchClient = new stytch.Client({
   project_id: process.env.STYTCH_PROJECT_ID,
-  secret: process.env.STYTCH_SECRET
+  secret: process.env.STYTCH_SECRET,
+  environment: 'live'
 });
 
 const verifyJWT = async(req,res,next) => {
