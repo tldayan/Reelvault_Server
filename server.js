@@ -19,6 +19,7 @@ app.use(express.json());
 
 /* app.use(credentials) */
 app.use(cors(corsOptions));
+app.options("*",cors(corsOptions))
 
 
 
