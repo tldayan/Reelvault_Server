@@ -17,11 +17,15 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/favicon.ico', (req, res) => {
   res.status(204).end(); // No content response
 });
+app.get('/favicon.png', (req, res) => {
+  res.status(204).end(); // No content response
+});
+
 //built-in middleware for json
 app.use(express.json());
 
 
-/* app.use(credentials) */
+app.use(credentials)
 app.use(cors(corsOptions));
 /* app.options("*",cors(corsOptions)) */
 
@@ -38,7 +42,7 @@ app.use("/refresh", require("./routes/refreshRoute"))
 app.use("/logout", require("./routes/logoutRoute")) */
 app.use("/createUser", require("./routes/mongo/createUser"))
 app.use("/incrementStytchUser", require("./routes/mongo/incrementStytchUser"))
-/* app.use(verifyJWT) */
+app.use(verifyJWT)
 
 app.use("/test", (req,res) => {
   return res.send({message : "Hello"})
