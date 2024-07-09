@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-/* app.use(credentials) */
+app.use(credentials)
 app.use(cors(corsOptions));
-app.options("*",cors(corsOptions))
+/* app.options("*",cors(corsOptions)) */
 
 
 
