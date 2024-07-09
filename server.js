@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 3200;
 
 app.use(express.urlencoded({ extended: false }));
 
+
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end(); // No content response
+});
 //built-in middleware for json
 app.use(express.json());
 
