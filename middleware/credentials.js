@@ -1,6 +1,6 @@
 
 
-const whitelist = ["https://reelvaultapp.vercel.app"]
+const whitelist = ["https://reelvault.vercel.app"]
 
 const credentials = (req,res,next) => {
 
