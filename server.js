@@ -42,7 +42,7 @@ app.use("/refresh", require("./routes/refreshRoute"))
 app.use("/logout", require("./routes/logoutRoute")) */
 app.use("/createUser", require("./routes/mongo/createUser"))
 app.use("/incrementStytchUser", require("./routes/mongo/incrementStytchUser"))
-app.use(verifyJWT)
+/* app.use(verifyJWT) */
 
 app.use("/test", (req,res) => {
   return res.send({message : "Hello"})
