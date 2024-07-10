@@ -4,7 +4,7 @@ const stytch = require('stytch')
 const stytchClient = new stytch.Client({
   project_id: process.env.STYTCH_PROJECT_ID,
   secret: process.env.STYTCH_SECRET,
-  environment: 'live'
+  env : stytch.envs.live
 });
 
 const verifyJWT = async(req,res,next) => {
@@ -34,7 +34,7 @@ const verifyJWT = async(req,res,next) => {
 
         try {
 
-            const stytchResponse = await stytchClient.sessions.authenticateJwt({session_jwt : accessToken})
+            const stytchResponse = await stytchClient.sessions.authenticateJwt(accessToken)
             req.stytchUser = stytchResponse.user
             next()
             
