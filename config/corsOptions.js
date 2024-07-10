@@ -9,9 +9,7 @@ const corsOptions = {
     }
   },
   credentials: true,
-  optionsSuccessStatus: 200,
-  methods: "GET, POST, PUT, DELETE",
-  allowedHeaders: "Content-Type, Authorization"
+  optionsSuccessStatus: 200
 };
 
 /* const corsOptions = {
