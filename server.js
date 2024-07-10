@@ -49,7 +49,6 @@ app.use("/test", (req,res) => {
 })
 
 app.use("/getIsUserExisting", require("./routes/mongo/getIsUserExisting")),
-
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"))
 app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDetails"))
 app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"))
