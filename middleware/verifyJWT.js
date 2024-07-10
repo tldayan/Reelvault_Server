@@ -1,5 +1,5 @@
 const stytch = require('stytch')
-require('dotenv').config()
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const stytchClient = new stytch.Client({
   project_id: process.env.STYTCH_PROJECT_ID,
