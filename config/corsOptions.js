@@ -13,15 +13,15 @@ const whitelist = ["https://reelvaultapp.vercel.app"];
 }; */
 
 
-const corsOptions = {
+/* const corsOptions = {
   origin: 'https://reelvaultapp.vercel.app', // Change to your frontend's URL
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-};
-/* const corsOptions = {
+}; */
+const corsOptions = {
   origin: true,  // Allow all origins
   credentials: true,
   optionsSuccessStatus: 200,
-}; */
+};
 
 module.exports = corsOptions;
 
