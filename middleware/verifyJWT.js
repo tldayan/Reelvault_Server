@@ -35,7 +35,7 @@ const verifyJWT = async(req,res,next) => {
         try {
 
             const stytchResponse = await stytchClient.sessions.authenticateJwt(accessToken)
-            req.stytchUser = stytchResponse.user
+            
             next()
             
         } catch (err) {
