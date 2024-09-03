@@ -3,10 +3,16 @@ const cors = require("cors");
 const credentials = require("./middleware/credentials");
 const connectDB = require("./mongo/MongoDB");
 const corsOptions = require("./config/corsOptions");
-const verifyJWT = require("./middleware/verifyJWT");
+/* const verifyJWT = require("./middleware/verifyJWT"); */
 const cookieParser = require('cookie-parser');
-const app = express()
 
+const { ApolloServer } = require('apollo-server-express');
+
+
+const typeDefs = require("./graphql/schema")
+const resolvers = require("./graphql/resolvers")
+
+const app = express()
 const PORT = process.env.PORT || 3200;
 
 
@@ -24,14 +30,15 @@ app.get('/favicon.png', (req, res) => {
 //built-in middleware for json
 app.use(express.json());
 
-
+ 
 app.use(credentials)
 app.use(cors(corsOptions));
-/* app.options("*",cors(corsOptions)) */
 
 
 
 connectDB()
+
+
 
 app.use(cookieParser())
 
@@ -54,6 +61,24 @@ app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDeta
 app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"))
 
 
+//Apollo Server
 
+async function startApolloServer() {
+  const apolloServer = new ApolloServer({ typeDefs, resolvers });
+  await apolloServer.start();
+  
+ 
+  apolloServer.applyMiddleware({ app, path: "/graphql" });
+}
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+async function startServer() {
+  try {
+    await startApolloServer();
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+}
+
+startServer();
