@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 // CORS setup
 app.use(credentials);
-app.use(cors(corsOptions));
+/* app.use(cors(corsOptions)); */
 
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());
