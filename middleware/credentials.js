@@ -8,10 +8,11 @@ const credentials = (req, res, next) => {
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With, Accept");
+    res.header("Vary", "Origin"); // Add Vary: Origin header
 
     // Handle preflight request
     if (req.method === "OPTIONS") {
-      return res.sendStatus(200);  
+      return res.sendStatus(200);
     }
   } else {
     return res.status(403).send("Forbidden: CORS policy does not allow this origin.");
