@@ -13,7 +13,7 @@ const resolvers = require("./graphql/resolvers");
 const app = express();
 const PORT = process.env.PORT || 3200;
 
-// Built-in middleware for URL-encoded and JSON data
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(credentials);
 app.use(cors(corsOptions));
 
-// Handle favicon requests
+
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 app.get('/favicon.png', (req, res) => res.status(204).end());
 
