@@ -10,7 +10,8 @@ const corsOptions = {
     }
   },
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  maxAge: 28800 // preflight cache (8 hours)
 };
 
 
