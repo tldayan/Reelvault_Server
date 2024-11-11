@@ -22,6 +22,14 @@ const userSchema = new Schema({
         showSeason: Number,
         showEpisode: Number
     }],
+    watchlist: [{
+        entityId: String,
+        entityName: String,
+        entityReleaseDate: String,
+        entityPosterUrl: String,
+        entityType: String,
+        entityDescription: String
+    }]
 /*     refreshToken : String */
 
 })

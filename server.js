@@ -36,6 +36,9 @@ app.use("/getIsUserExisting", require("./routes/mongo/getIsUserExisting"));
 app.use("/deleteUserShowDetails", require("./routes/mongo/deleteShowDetails"));
 app.use("/postUpdateUserShowDetails", require("./routes/mongo/updateUserShowDetails"));
 app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"));
+app.use("/getUserWatchlist", require("./routes/mongo/getUserWatchlist"))
+app.use("/deleteUserWatchlist", require("./routes/mongo/deleteUserWatchlist"))
+app.use("/addUserWatchlist", require("./routes/mongo/addUserWatchlist"))
 
 // Test route
 app.use("/test", (req, res) => res.send({ message: "Hello" }));
@@ -58,3 +61,4 @@ async function startServer() {
 }
 
 startServer();
+

@@ -1,4 +1,3 @@
-
 const express = require("express")
 const User = require("../../mongo/models/User")
 const router = express.Router()

@@ -1,25 +1,21 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const path = require("path");
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
+let isConnected;
 
-let isConnected 
-
-const connectDB = async() => {
-
-    if(isConnected) {
-        return
+const connectDB = async () => {
+    if (isConnected) {
+        return;
     }
     
-
     try {
-        
-        await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-        isConnected = true
+        await mongoose.connect(process.env.MONGODB_URI);
+        isConnected = true;
     } catch (err) {
-        console.log(err.message)
-        isConnected = false
+        console.log(err.message);
+        isConnected = false;
     }
-}
+};
 
-module.exports = connectDB
+module.exports = connectDB;
