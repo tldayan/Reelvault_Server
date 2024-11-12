@@ -22,7 +22,7 @@ const deleteUserWatchlist = async(req,res) => {
 
   await user.save()
   
-  return res.status(200).json({watchlist: user.watchlist})
+  return res.status(200).json(user.watchlist)
 
 }
 

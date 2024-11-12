@@ -7,7 +7,7 @@ const router = express.Router()
 const getUserWatchlist = async(req,res) => {
 
   const {userId} = req.query
-  console.log(req)
+
   if(!userId) {
     return res.sendStatus(400)
   }
@@ -20,9 +20,9 @@ const getUserWatchlist = async(req,res) => {
         return res.sendStatus(404)
       }
 
-      let userWatchlistObj = user.watchlist
+      let userWatchlist = user.watchlist
 
-      return res.status(200).json({userWatchlistObj})
+      return res.status(200).json(userWatchlist)
 
   } catch(err) {
     console.log(err.message)

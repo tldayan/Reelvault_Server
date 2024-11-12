@@ -26,8 +26,8 @@ const addUserWatchlist = async(req,res) => {
         }
 
       await user.save()
-      
-      return res.send(200).json({watchlist: user.watchlist})
+
+      return res.status(200).json(user.watchlist)
   } catch (err) {
     console.log(err.message)
     return res.sendStatus(500)
