@@ -39,6 +39,7 @@ app.use("/getUserShowDetails", require("./routes/mongo/userShowDetails"));
 app.use("/getUserWatchlist", require("./routes/mongo/getUserWatchlist"))
 app.use("/deleteUserWatchlist", require("./routes/mongo/deleteUserWatchlist"))
 app.use("/addUserWatchlist", require("./routes/mongo/addUserWatchlist"))
+app.use("/askGemini", require("./routes/askGemini"))
 
 // Test route
 app.use("/test", (req, res) => res.send({ message: "Hello" }));
